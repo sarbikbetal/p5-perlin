@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      canvas {
+        display: block;
+        margin: auto;
+      }
+      .header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 100px;
+      }
+      .controls {
+        width: 100vw;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding-bottom: 24px;
+      }
+      .slider {
+        -webkit-appearance: none;
+        width: 100%;
+        max-width: 200px;
+        height: 8px;
+        border-radius: 8px;
+        background: #d3d3d3;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: 0.2s;
+        transition: opacity 0.2s;
+      }
+
+      .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: #04aa6d;
+        cursor: pointer;
+      }
+
+      .slider::-moz-range-thumb {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: #04aa6d;
+        cursor: pointer;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <h3>Realistic Clouds with Perlin Noise</h3>
+      <div class="controls">
+        <div>
+          <label for="dsty">Density:</label>
+          <input
+            class="slider"
+            type="range"
+            id="dsty"
+            name="dsty"
+            min="0.001"
+            max="0.03"
+            step="0.002"
+            value="0.005"
+          />
+        </div>
+      </div>
+    </div>
+    <script defer src="clouds.js"></script>
+  </body>
+</html>
